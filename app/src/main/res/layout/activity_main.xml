@@ -1,18 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".features.login.presentation.pages.LoginPage">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="60dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="40dp"
+            android:layout_marginBottom="40sp"
+            android:textColor="@android:color/white"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:hint="@string/email"
+            android:background="@drawable/custom_edit_text"
+            android:height="@dimen/edit_text_height"
+            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:text="matheus@gmail.com"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/edit_text_padding"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="@dimen/margin_between_form_fields"/>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:hint="@string/password"
+            android:background="@drawable/custom_edit_text"
+            android:height="@dimen/edit_text_height"
+            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:inputType="textPassword"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/edit_text_padding"
+            android:layout_marginBottom="@dimen/margin_between_form_fields"/>
+        <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/lightGreen"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/button_height"
+            app:cardCornerRadius="6dp"
+            android:layout_marginBottom="@dimen/margin_between_form_fields">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/signin"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/button_text_size"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                />
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin_between_form_fields">
+            <view
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:textColor="#1a1c1f"
+                android:layout_gravity="center_vertical"
+                android:solidColor="@android:color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/or"
+                android:textSize="@dimen/or_text_size"
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="10dp"/>
+            <view
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:textColor="#1a1c1f"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/lightYellow"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/button_height"
+            app:cardCornerRadius="6dp"
+            android:layout_marginBottom="@dimen/margin_between_form_fields">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/signup"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/button_text_size"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_password"
+            android:gravity="center"
+            android:textSize="@dimen/forgot_password_text_size"
+            android:textColor="@android:color/white"/>
+        <ImageView
+            android:src="@mipmap/logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="60dp"/>
+    </LinearLayout>
+
+</LinearLayout>

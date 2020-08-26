@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "568383633173",
+    "firebase_url": "https://pautando-7e283.firebaseio.com",
+    "project_id": "pautando-7e283",
+    "storage_bucket": "pautando-7e283.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568383633173:android:911671b9fbeee86c971b1c",
+        "android_client_info": {
+          "package_name": "com.uds.pautando"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568383633173-78dakvphe9h7vdctaf0titppfe45vkvd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uds.pautando",
+            "certificate_hash": "050add62a4675a4e82a1fd4997875113f609229c"
+          }
+        },
+        {
+          "client_id": "568383633173-3h6ve51s037vhm1qaimj92en5fho4dd6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmAc1swx9crFGkL-heegHGNuQ1ZQMncgQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568383633173-3h6ve51s037vhm1qaimj92en5fho4dd6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,12 @@
-package com.uds.pautando;
+package com.uds.pautando.features.login.presentation.pages;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.uds.pautando.R;
+
+public class LoginPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

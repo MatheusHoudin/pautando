@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="edit_text_height">60dp</dimen>
+    <dimen name="edit_text_padding">16dp</dimen>
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="button_text_size">24sp</dimen>
+    <dimen name="or_text_size">20sp</dimen>
+    <dimen name="margin_between_form_fields">20dp</dimen>
+    <dimen name="forgot_password_text_size">18dp</dimen>
+</resources>
