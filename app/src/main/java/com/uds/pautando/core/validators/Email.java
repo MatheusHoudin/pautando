@@ -1,10 +1,7 @@
-package com.uds.pautando.validators;
+package com.uds.pautando.core.validators;
 
-import android.text.TextUtils;
-import android.util.Patterns;
-
-import com.uds.pautando.error.exception.EmptyEmailException;
-import com.uds.pautando.error.exception.InvalidEmailFormatException;
+import com.uds.pautando.core.error.exception.EmptyEmailException;
+import com.uds.pautando.core.error.exception.InvalidEmailFormatException;
 
 import java.util.regex.Pattern;
 

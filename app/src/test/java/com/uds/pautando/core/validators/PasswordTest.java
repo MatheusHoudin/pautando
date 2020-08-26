@@ -1,7 +1,7 @@
-package com.uds.pautando.validators;
+package com.uds.pautando.core.validators;
 
-import com.uds.pautando.error.exception.EmptyPasswordException;
-import com.uds.pautando.error.exception.ShortPasswordException;
+import com.uds.pautando.core.error.exception.EmptyPasswordException;
+import com.uds.pautando.core.error.exception.ShortPasswordException;
 
 import org.junit.Rule;
 import org.junit.Test;

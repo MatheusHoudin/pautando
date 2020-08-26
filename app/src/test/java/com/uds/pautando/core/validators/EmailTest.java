@@ -1,7 +1,7 @@
-package com.uds.pautando.validators;
+package com.uds.pautando.core.validators;
 
-import com.uds.pautando.error.exception.EmptyEmailException;
-import com.uds.pautando.error.exception.InvalidEmailFormatException;
+import com.uds.pautando.core.error.exception.EmptyEmailException;
+import com.uds.pautando.core.error.exception.InvalidEmailFormatException;
 
 import org.junit.Rule;
 import org.junit.Test;

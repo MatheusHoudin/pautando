@@ -1,8 +1,8 @@
 package com.uds.pautando.features.login.data.model;
 
-import com.uds.pautando.error.exception.EmailAndPasswordNotProvidedException;
-import com.uds.pautando.validators.Email;
-import com.uds.pautando.validators.Password;
+import com.uds.pautando.core.error.exception.EmailAndPasswordNotProvidedException;
+import com.uds.pautando.core.validators.Email;
+import com.uds.pautando.core.validators.Password;
 
 public class Login {
     private Email email;

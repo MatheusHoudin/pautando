@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".features.login.presentation.pages.LoginPage">
-
     <LinearLayout
         android:layout_gravity="center"
         android:gravity="center"
@@ -23,7 +22,6 @@
             android:textSize="40dp"
             android:layout_marginBottom="40sp"
             android:textColor="@android:color/white"/>
-
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
@@ -49,36 +47,31 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/edit_text_padding"
             android:layout_marginBottom="@dimen/margin_between_form_fields"/>
-        <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/lightGreen"
+        <Button
+            android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_gravity="center"
             android:layout_height="@dimen/button_height"
-            app:cardCornerRadius="6dp"
-            android:layout_marginBottom="@dimen/margin_between_form_fields">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/signin"
-                android:gravity="center"
-                android:layout_gravity="center_vertical"
-                android:textSize="@dimen/button_text_size"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                />
-        </androidx.cardview.widget.CardView>
+            android:layout_marginBottom="@dimen/margin_between_form_fields"
+            android:background="@drawable/custom_login_rounded_button"
+            android:text="@string/signin"
+            android:textSize="@dimen/button_text_size"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"/>
         <LinearLayout
+            android:id="@+id/custom_divider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="@dimen/margin_between_form_fields">
-            <view
-                android:layout_width="wrap_content"
-                android:layout_height="4dp"
-                android:textColor="#1a1c1f"
-                android:layout_gravity="center_vertical"
-                android:solidColor="@android:color/white"/>
+            <View
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:background="@android:color/darker_gray"
+                android:layout_gravity="center_vertical"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,30 +79,24 @@
                 android:textSize="@dimen/or_text_size"
                 android:textColor="@android:color/white"
                 android:layout_marginHorizontal="10dp"/>
-            <view
-                android:layout_width="wrap_content"
-                android:layout_height="4dp"
-                android:textColor="#1a1c1f"
+            <View
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:background="@android:color/darker_gray"
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
-        <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/lightYellow"
+        <Button
+            android:background="@drawable/custom_register_rounded_button"
             android:layout_width="match_parent"
             android:layout_gravity="center"
             android:layout_height="@dimen/button_height"
-            app:cardCornerRadius="6dp"
-            android:layout_marginBottom="@dimen/margin_between_form_fields">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/signup"
-                android:gravity="center"
-                android:layout_gravity="center_vertical"
-                android:textSize="@dimen/button_text_size"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                />
-        </androidx.cardview.widget.CardView>
+            android:layout_marginBottom="@dimen/margin_between_form_fields"
+            android:textSize="@dimen/button_text_size"
+            android:textColor="@android:color/white"
+            android:text="@string/signup"
+            android:textStyle="bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,5 +110,4 @@
             android:layout_height="40dp"
             android:layout_marginTop="60dp"/>
     </LinearLayout>
-
 </LinearLayout>

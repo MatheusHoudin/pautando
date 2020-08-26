@@ -1,4 +1,4 @@
-package com.uds.pautando.error.exception;
+package com.uds.pautando.core.error.exception;
 
 public class EmptyPasswordException extends Exception{
     public EmptyPasswordException(){
