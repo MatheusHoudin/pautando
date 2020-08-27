@@ -13,7 +13,7 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="60dp"
+        android:layout_marginHorizontal="40dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
@@ -28,8 +28,9 @@
             android:hint="@string/email"
             android:background="@drawable/custom_edit_text"
             android:height="@dimen/edit_text_height"
-            android:textColorHint="@android:color/darker_gray"
+            android:textColorHint="@android:color/holo_green_dark"
             android:textColor="@android:color/white"
+            android:textCursorDrawable="@null"
             android:text="matheus@gmail.com"
             android:layout_height="wrap_content"
             android:padding="@dimen/edit_text_padding"
@@ -39,6 +40,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:hint="@string/password"
+            android:textCursorDrawable="@null"
             android:background="@drawable/custom_edit_text"
             android:height="@dimen/edit_text_height"
             android:textColorHint="@android:color/darker_gray"
@@ -47,6 +49,15 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/edit_text_padding"
             android:layout_marginBottom="@dimen/margin_between_form_fields"/>
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/login_loading_progress"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="20dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:indeterminateDrawable="@drawable/loading"
+            />
         <Button
             android:id="@+id/login"
             android:layout_width="match_parent"

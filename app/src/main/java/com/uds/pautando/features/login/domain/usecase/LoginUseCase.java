@@ -24,31 +24,37 @@ public class LoginUseCase implements BaseUseCase<MutableLiveData<LoginResponse>,
         } catch (EmailAndPasswordNotProvidedException e) {
             loginResult.postValue(new LoginResponse(
               e.getMessage(),
+              e.getMessage(),
               true,false,false,false,false,false
             ));
         } catch (EmptyEmailException e) {
             loginResult.postValue(new LoginResponse(
               e.getMessage(),
+             null,
              false,true,false,false,false,false
             ));
         } catch (EmptyPasswordException e) {
             loginResult.postValue(new LoginResponse(
-              e.getMessage(),
+              null,
+               e.getMessage(),
              false,false,false,false,false,true
             ));
         } catch (InvalidEmailFormatException e) {
             loginResult.postValue(new LoginResponse(
               e.getMessage(),
+             null,
              false,false,true,false,false,false
             ));
         } catch (ShortPasswordException e) {
             loginResult.postValue(new LoginResponse(
+              null,
               e.getMessage(),
              false,false,false,true,false,false
             ));
         } catch (Exception e) {
             loginResult.postValue(new LoginResponse(
-              e.getMessage(),
+              null,
+             null,
              false,false,false,false,true,false
             ));
         }

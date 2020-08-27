@@ -6,33 +6,56 @@ public class LoginResponse {
     private Boolean isEmptyEmail;
     private Boolean isEmptyPassword;
     private Boolean isInvalidEmail;
-    private Boolean isShortPassword;
+    private Boolean isInvalidPassword;
     private Boolean isUnexpectedError;
-    private String errorMessage;
+    private String emailErrorMessage;
+    private String passwordErrorMessage;
+    private String unexpectedErrorMessage;
 
-    public LoginResponse(Boolean userLoggedInSuccessfully, String errorMessage) {
+
+    public LoginResponse(Boolean userLoggedInSuccessfully, String emailErrorMessage) {
         this.isUserLoggedInSuccessfully = userLoggedInSuccessfully;
-        this.errorMessage = errorMessage;
+        this.emailErrorMessage = emailErrorMessage;
     }
 
-    public LoginResponse(String errorMessage, Boolean isEmailAndPasswordNotProvided,
-                         Boolean isEmptyEmail,Boolean isInvalidEmail,Boolean isShortPassword,
+    public LoginResponse(String emailErrorMessage, String passwordErrorMessage, Boolean isEmailAndPasswordNotProvided,
+                         Boolean isEmptyEmail, Boolean isInvalidEmail, Boolean isInvalidPassword,
                          Boolean isUnexpectedError, Boolean isEmptyPassword) {
-        this.errorMessage = errorMessage;
+        this.emailErrorMessage = emailErrorMessage;
+        this.passwordErrorMessage = passwordErrorMessage;
         this.isEmailAndPasswordNotProvided = isEmailAndPasswordNotProvided;
         this.isEmptyEmail = isEmptyEmail;
         this.isInvalidEmail = isInvalidEmail;
-        this.isShortPassword = isShortPassword;
+        this.isInvalidPassword = isInvalidPassword;
         this.isUnexpectedError = isUnexpectedError;
         this.isEmptyPassword = isEmptyPassword;
+    }
+
+    public LoginResponse(String emailErrorMessage, String passwordErrorMessage,
+                         String unexpectedErrorMessage, Boolean isEmailAndPasswordNotProvided,
+                         Boolean isEmptyEmail, Boolean isInvalidEmail, Boolean isInvalidPassword,
+                         Boolean isUnexpectedError, Boolean isEmptyPassword) {
+        this.emailErrorMessage = emailErrorMessage;
+        this.passwordErrorMessage = passwordErrorMessage;
+        this.isEmailAndPasswordNotProvided = isEmailAndPasswordNotProvided;
+        this.isEmptyEmail = isEmptyEmail;
+        this.isInvalidEmail = isInvalidEmail;
+        this.isInvalidPassword = isInvalidPassword;
+        this.isUnexpectedError = isUnexpectedError;
+        this.isEmptyPassword = isEmptyPassword;
+        this.unexpectedErrorMessage = unexpectedErrorMessage;
     }
 
     public Boolean getUserLoggedInSuccessfully() {
         return isUserLoggedInSuccessfully;
     }
 
-    public String getErrorMessage() {
-        return errorMessage;
+    public String getEmailErrorMessage() {
+        return emailErrorMessage;
+    }
+
+    public String getPasswordErrorMessage() {
+        return passwordErrorMessage;
     }
 
     public Boolean getEmailAndPasswordNotProvided() {
@@ -52,11 +75,15 @@ public class LoginResponse {
     }
 
     public Boolean getShortPassword() {
-        return isShortPassword;
+        return isInvalidPassword;
     }
 
     public Boolean getUnexpectedError() {
         return isUnexpectedError;
+    }
+
+    public String getUnexpectedErrorMessage() {
+        return unexpectedErrorMessage;
     }
 
     @Override
@@ -67,9 +94,10 @@ public class LoginResponse {
                 ", isEmptyEmail=" + isEmptyEmail +
                 ", isEmptyPassword=" + isEmptyPassword +
                 ", isInvalidEmail=" + isInvalidEmail +
-                ", isShortPassword=" + isShortPassword +
+                ", isShortPassword=" + isInvalidPassword +
                 ", isUnexpectedError=" + isUnexpectedError +
-                ", errorMessage='" + errorMessage + '\'' +
+                ", emailErrorMessage='" + emailErrorMessage + '\'' +
+                ", passwordErrorMessage='" + passwordErrorMessage + '\'' +
                 '}';
     }
 }
