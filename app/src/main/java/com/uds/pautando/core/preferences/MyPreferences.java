@@ -3,7 +3,7 @@ package com.uds.pautando.core.preferences;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.uds.pautando.features.sign_in.data.model.User;
+import com.uds.pautando.features.sign_in.data.model.SignInUser;
 
 public class MyPreferences {
     static MyPreferences instance;
@@ -39,11 +39,11 @@ public class MyPreferences {
         editor.apply();
     }
 
-    public User getUser() {
+    public SignInUser getUser() {
         String uid = sharedPreferences.getString(UID,null);
         String email = sharedPreferences.getString(EMAIL, null);
 
-        return new User(uid,email,null);
+        return new SignInUser(uid,email,null);
     }
 
 }

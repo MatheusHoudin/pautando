@@ -10,13 +10,13 @@ import com.uds.pautando.core.error.exception.ShortPasswordException;
 import com.uds.pautando.core.usecase.BaseUseCase;
 import com.uds.pautando.features.sign_in.data.model.Login;
 import com.uds.pautando.features.sign_in.data.model.LoginResponse;
-import com.uds.pautando.features.sign_in.data.repository.LoginRepositoryImpl;
-import com.uds.pautando.features.sign_in.domain.repository.LoginRepository;
+import com.uds.pautando.features.sign_in.data.repository.SignInRepositoryImpl;
+import com.uds.pautando.features.sign_in.domain.repository.SignInRepository;
 
-public class LoginUseCase implements BaseUseCase<MutableLiveData<LoginResponse>, LoginParams> {
-    private LoginRepository repository = new LoginRepositoryImpl();
+public class SignInUseCase implements BaseUseCase<MutableLiveData<LoginResponse>, SignInParams> {
+    private SignInRepository repository = new SignInRepositoryImpl();
     @Override
-    public MutableLiveData<LoginResponse> call(LoginParams params) {
+    public MutableLiveData<LoginResponse> call(SignInParams params) {
         MutableLiveData<LoginResponse> loginResult = new MutableLiveData<>();
         try {
             Login login = new Login(params.getEmail(),params.getPassword());

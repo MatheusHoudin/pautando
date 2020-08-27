@@ -1,11 +1,11 @@
 package com.uds.pautando.features.sign_in.data.model;
 
-public class User {
+public class SignInUser {
     private String uid;
     private String email;
     private String name;
 
-    public User(String uid, String email, String name) {
+    public SignInUser(String uid, String email, String name) {
         this.uid = uid;
         this.email = email;
         this.name = name;

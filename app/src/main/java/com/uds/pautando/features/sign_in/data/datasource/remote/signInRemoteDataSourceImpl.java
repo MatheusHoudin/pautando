@@ -15,13 +15,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.uds.pautando.core.callback.SuccessFailureCallback;
 import com.uds.pautando.features.sign_in.data.model.Login;
 import com.uds.pautando.features.sign_in.data.model.LoginResponse;
-import com.uds.pautando.features.sign_in.data.model.User;
+import com.uds.pautando.features.sign_in.data.model.SignInUser;
 
-public class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
+public class signInRemoteDataSourceImpl implements SignInRemoteDataSource {
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
-    public MutableLiveData<LoginResponse> login(Login login, final SuccessFailureCallback<User> callback) {
+    public MutableLiveData<LoginResponse> login(Login login, final SuccessFailureCallback<SignInUser> callback) {
         final MutableLiveData<LoginResponse> loginResponseMutableLiveData = new MutableLiveData<>();
         firebaseAuth.signInWithEmailAndPassword(
                 login.getEmail().getValue(),
@@ -31,7 +31,7 @@ public class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
                     FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                    callback.onSuccess(new User(
+                    callback.onSuccess(new SignInUser(
                       firebaseUser.getUid(),
                       firebaseUser.getEmail(),
                       null
@@ -56,7 +56,6 @@ public class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
                           )
                         );
                     }else{
-                        Log.i("UNEXPECTED", "DJASDBÇAKSJDA");
                         loginResponseMutableLiveData.postValue(
                           new LoginResponse(
                             null, null, "Ocorreu um erro inesperado ao buscar seu usuário, por favor tente novamente",
