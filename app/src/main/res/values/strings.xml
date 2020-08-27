@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">Pautando</string>
     <string name="email">Digite seu email</string>
+    <string name="name">Digite seu nome</string>
     <string name="password">Digite sua senha</string>
     <string name="signin">Entrar</string>
     <string name="signup">Cadastrar</string>
+    <string name="create_my_account">Criar minha conta</string>
     <string name="or">OU</string>
     <string name="forgot_password">Poxa, esqueci minha senha, quero ajuda.</string>
+    <string name="already_have_an_account">Já tenho uma conta, quero acessar</string>
+    <string name="signup_page">Criar conta</string>
 </resources>

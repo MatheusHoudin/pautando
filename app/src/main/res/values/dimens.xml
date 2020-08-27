@@ -4,7 +4,9 @@
     <dimen name="edit_text_padding">16dp</dimen>
     <dimen name="button_height">60dp</dimen>
     <dimen name="button_text_size">24sp</dimen>
+    <dimen name="app_header_text_size">28sp</dimen>
     <dimen name="or_text_size">20sp</dimen>
     <dimen name="margin_between_form_fields">20dp</dimen>
     <dimen name="forgot_password_text_size">18dp</dimen>
+    <dimen name="go_back_to_login_text_size">18dp</dimen>
 </resources>
