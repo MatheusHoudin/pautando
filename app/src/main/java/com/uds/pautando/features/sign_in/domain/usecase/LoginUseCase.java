@@ -1,4 +1,4 @@
-package com.uds.pautando.features.login.domain.usecase;
+package com.uds.pautando.features.sign_in.domain.usecase;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -8,10 +8,10 @@ import com.uds.pautando.core.error.exception.EmptyPasswordException;
 import com.uds.pautando.core.error.exception.InvalidEmailFormatException;
 import com.uds.pautando.core.error.exception.ShortPasswordException;
 import com.uds.pautando.core.usecase.BaseUseCase;
-import com.uds.pautando.features.login.data.model.Login;
-import com.uds.pautando.features.login.data.model.LoginResponse;
-import com.uds.pautando.features.login.data.repository.LoginRepositoryImpl;
-import com.uds.pautando.features.login.domain.repository.LoginRepository;
+import com.uds.pautando.features.sign_in.data.model.Login;
+import com.uds.pautando.features.sign_in.data.model.LoginResponse;
+import com.uds.pautando.features.sign_in.data.repository.LoginRepositoryImpl;
+import com.uds.pautando.features.sign_in.domain.repository.LoginRepository;
 
 public class LoginUseCase implements BaseUseCase<MutableLiveData<LoginResponse>, LoginParams> {
     private LoginRepository repository = new LoginRepositoryImpl();

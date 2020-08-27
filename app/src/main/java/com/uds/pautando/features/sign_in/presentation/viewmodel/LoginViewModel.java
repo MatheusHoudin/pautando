@@ -1,10 +1,10 @@
-package com.uds.pautando.features.login.presentation.viewmodel;
+package com.uds.pautando.features.sign_in.presentation.viewmodel;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import com.uds.pautando.features.login.data.model.LoginResponse;
-import com.uds.pautando.features.login.domain.usecase.LoginParams;
-import com.uds.pautando.features.login.domain.usecase.LoginUseCase;
+import com.uds.pautando.features.sign_in.data.model.LoginResponse;
+import com.uds.pautando.features.sign_in.domain.usecase.LoginParams;
+import com.uds.pautando.features.sign_in.domain.usecase.LoginUseCase;
 
 public class LoginViewModel extends ViewModel {
     private LoginUseCase loginUseCase = new LoginUseCase();

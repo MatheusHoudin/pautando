@@ -1,4 +1,4 @@
-package com.uds.pautando.features.login.data.model;
+package com.uds.pautando.features.sign_in.data.model;
 
 import com.uds.pautando.core.error.exception.EmailAndPasswordNotProvidedException;
 import com.uds.pautando.core.validators.Email;

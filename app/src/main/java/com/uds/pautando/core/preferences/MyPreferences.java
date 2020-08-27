@@ -3,7 +3,7 @@ package com.uds.pautando.core.preferences;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.uds.pautando.features.login.data.model.User;
+import com.uds.pautando.features.sign_in.data.model.User;
 
 public class MyPreferences {
     static MyPreferences instance;

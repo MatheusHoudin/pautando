@@ -1,4 +1,4 @@
-package com.uds.pautando.features.login.data.datasource.remote;
+package com.uds.pautando.features.sign_in.data.datasource.remote;
 
 import android.util.Log;
 
@@ -13,9 +13,9 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 import com.uds.pautando.core.callback.SuccessFailureCallback;
-import com.uds.pautando.features.login.data.model.Login;
-import com.uds.pautando.features.login.data.model.LoginResponse;
-import com.uds.pautando.features.login.data.model.User;
+import com.uds.pautando.features.sign_in.data.model.Login;
+import com.uds.pautando.features.sign_in.data.model.LoginResponse;
+import com.uds.pautando.features.sign_in.data.model.User;
 
 public class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();

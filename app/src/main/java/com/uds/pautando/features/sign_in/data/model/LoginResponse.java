@@ -1,4 +1,4 @@
-package com.uds.pautando.features.login.data.model;
+package com.uds.pautando.features.sign_in.data.model;
 
 public class LoginResponse {
     private Boolean isUserLoggedInSuccessfully;

@@ -1,4 +1,4 @@
-package com.uds.pautando.features.login.domain.usecase;
+package com.uds.pautando.features.sign_in.domain.usecase;
 
 public class LoginParams {
     private String email;

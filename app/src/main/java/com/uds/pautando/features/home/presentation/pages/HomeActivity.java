@@ -3,7 +3,7 @@ package com.uds.pautando.features.home.presentation.pages;
 import androidx.appcompat.app.AppCompatActivity;
 import com.uds.pautando.R;
 import com.uds.pautando.core.preferences.MyPreferences;
-import com.uds.pautando.features.login.data.model.User;
+import com.uds.pautando.features.sign_in.data.model.User;
 
 import android.os.Bundle;
 import android.util.Log;

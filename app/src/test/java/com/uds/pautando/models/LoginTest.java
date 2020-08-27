@@ -3,7 +3,7 @@ package com.uds.pautando.models;
 import com.uds.pautando.core.error.exception.EmailAndPasswordNotProvidedException;
 import com.uds.pautando.core.error.exception.EmptyEmailException;
 import com.uds.pautando.core.error.exception.EmptyPasswordException;
-import com.uds.pautando.features.login.data.model.Login;
+import com.uds.pautando.features.sign_in.data.model.Login;
 
 import org.junit.Rule;
 import org.junit.Test;

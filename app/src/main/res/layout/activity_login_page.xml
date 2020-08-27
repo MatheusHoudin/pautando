@@ -7,7 +7,7 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".features.login.presentation.pages.LoginPage">
+    tools:context=".features.sign_in.presentation.pages.LoginPage">
     <LinearLayout
         android:layout_gravity="center"
         android:gravity="center"
@@ -97,6 +97,7 @@
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
         <Button
+            android:id="@+id/signup"
             android:background="@drawable/custom_register_rounded_button"
             android:layout_width="match_parent"
             android:layout_gravity="center"
