@@ -5,9 +5,12 @@
     <string name="password">Digite sua senha</string>
     <string name="signin">Entrar</string>
     <string name="signup">Cadastrar</string>
+    <string name="recover_password">Recuperar senha</string>
+    <string name="recover_password_instructions">Enviaremos um email de alteração de senha para seu email, logo você acessará sua conta novamente</string>
     <string name="create_my_account">Criar minha conta</string>
     <string name="or">OU</string>
     <string name="forgot_password">Poxa, esqueci minha senha, quero ajuda.</string>
     <string name="already_have_an_account">Já tenho uma conta, quero acessar</string>
     <string name="signup_page">Criar conta</string>
+    <string name="recover_password_page">Recuperar senha</string>
 </resources>

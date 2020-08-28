@@ -23,7 +23,7 @@ import com.uds.pautando.features.sign_in.data.model.SignInUser;
 
 import javax.annotation.Nullable;
 
-public class signInRemoteDataSourceImpl implements SignInRemoteDataSource {
+public class SignInRemoteDataSourceImpl implements SignInRemoteDataSource {
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
 
