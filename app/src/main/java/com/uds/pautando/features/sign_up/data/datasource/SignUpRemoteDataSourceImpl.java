@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.uds.pautando.core.callback.SuccessFailureCallback;
 import com.uds.pautando.features.core_models.MeetingAgenda;
 import com.uds.pautando.features.core_models.User;
@@ -22,6 +23,13 @@ import java.util.ArrayList;
 public class SignUpRemoteDataSourceImpl implements SignUpRemoteDataSource{
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+
+    public SignUpRemoteDataSourceImpl(){
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+          .setTimestampsInSnapshotsEnabled(true)
+          .build();
+        firestore.setFirestoreSettings(settings);
+    }
 
     @Override
     public MutableLiveData<SignUpResponse> signUp(final SignUpUser signUpUser) {

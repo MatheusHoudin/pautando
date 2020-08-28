@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.uds.pautando.core.callback.SuccessFailureCallback;
 import com.uds.pautando.features.sign_in.data.model.SignIn;
@@ -27,6 +28,12 @@ public class SignInRemoteDataSourceImpl implements SignInRemoteDataSource {
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
 
+    public SignInRemoteDataSourceImpl(){
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                .setTimestampsInSnapshotsEnabled(true)
+                .build();
+        firestore.setFirestoreSettings(settings);
+    }
     @Override
     public MutableLiveData<SignInResponse> login(SignIn signIn, final SuccessFailureCallback<SignInUser> callback) {
         final MutableLiveData<SignInResponse> loginResponseMutableLiveData = new MutableLiveData<>();
@@ -38,6 +45,7 @@ public class SignInRemoteDataSourceImpl implements SignInRemoteDataSource {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
                     final FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                    Log.i("UID",firebaseUser.getUid());
                     firestore.collection("users").whereEqualTo("uid",firebaseUser.getUid())
                       .addSnapshotListener(new EventListener<QuerySnapshot>() {
                           @Override
