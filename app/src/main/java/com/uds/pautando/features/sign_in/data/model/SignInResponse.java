@@ -1,6 +1,6 @@
 package com.uds.pautando.features.sign_in.data.model;
 
-public class LoginResponse {
+public class SignInResponse {
     private Boolean isUserLoggedInSuccessfully;
     private Boolean isEmailAndPasswordNotProvided;
     private Boolean isEmptyEmail;
@@ -13,14 +13,14 @@ public class LoginResponse {
     private String unexpectedErrorMessage;
 
 
-    public LoginResponse(Boolean userLoggedInSuccessfully, String emailErrorMessage) {
+    public SignInResponse(Boolean userLoggedInSuccessfully, String emailErrorMessage) {
         this.isUserLoggedInSuccessfully = userLoggedInSuccessfully;
         this.emailErrorMessage = emailErrorMessage;
     }
 
-    public LoginResponse(String emailErrorMessage, String passwordErrorMessage, Boolean isEmailAndPasswordNotProvided,
-                         Boolean isEmptyEmail, Boolean isInvalidEmail, Boolean isInvalidPassword,
-                         Boolean isUnexpectedError, Boolean isEmptyPassword) {
+    public SignInResponse(String emailErrorMessage, String passwordErrorMessage, Boolean isEmailAndPasswordNotProvided,
+                          Boolean isEmptyEmail, Boolean isInvalidEmail, Boolean isInvalidPassword,
+                          Boolean isUnexpectedError, Boolean isEmptyPassword) {
         this.emailErrorMessage = emailErrorMessage;
         this.passwordErrorMessage = passwordErrorMessage;
         this.isEmailAndPasswordNotProvided = isEmailAndPasswordNotProvided;
@@ -31,10 +31,10 @@ public class LoginResponse {
         this.isEmptyPassword = isEmptyPassword;
     }
 
-    public LoginResponse(String emailErrorMessage, String passwordErrorMessage,
-                         String unexpectedErrorMessage, Boolean isEmailAndPasswordNotProvided,
-                         Boolean isEmptyEmail, Boolean isInvalidEmail, Boolean isInvalidPassword,
-                         Boolean isUnexpectedError, Boolean isEmptyPassword) {
+    public SignInResponse(String emailErrorMessage, String passwordErrorMessage,
+                          String unexpectedErrorMessage, Boolean isEmailAndPasswordNotProvided,
+                          Boolean isEmptyEmail, Boolean isInvalidEmail, Boolean isInvalidPassword,
+                          Boolean isUnexpectedError, Boolean isEmptyPassword) {
         this.emailErrorMessage = emailErrorMessage;
         this.passwordErrorMessage = passwordErrorMessage;
         this.isEmailAndPasswordNotProvided = isEmailAndPasswordNotProvided;

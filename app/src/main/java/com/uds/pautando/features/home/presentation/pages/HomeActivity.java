@@ -18,5 +18,6 @@ public class HomeActivity extends AppCompatActivity {
         SignInUser signInUser = MyPreferences.getInstance().getUser();
         Log.i("UID", signInUser.getUid());
         Log.i("EMAIL", signInUser.getEmail());
+        Log.i("NAME", signInUser.getName());
     }
 }

@@ -64,7 +64,7 @@ public class SignUpRemoteDataSourceImpl implements SignUpRemoteDataSource{
                     }else{
                         signUpResponseMutableLiveData.postValue(new SignUpResponse(
                           false, false, false, false, false, false, false, false, false, false ,true,
-                          false, null, null,null, "Ocorreu um erro inesperado ao buscar seu usuário, por favor tente novamente"
+                          false, null, null,null, "Ocorreu um erro inesperado ao criar sua conta, por favor tente novamente"
                         ));
                     }
                 }

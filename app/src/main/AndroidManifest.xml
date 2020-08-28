@@ -12,7 +12,7 @@
         <activity android:name=".features.forgot_password.presentation.pages.ForgotPasswordPage"></activity>
         <activity android:name=".features.sign_up.presentation.pages.SignUpPage" />
         <activity android:name=".features.home.presentation.pages.HomeActivity" />
-        <activity android:name=".features.sign_in.presentation.pages.LoginPage">
+        <activity android:name=".features.sign_in.presentation.pages.SignInPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

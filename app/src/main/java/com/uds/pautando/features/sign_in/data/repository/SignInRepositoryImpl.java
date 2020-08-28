@@ -9,8 +9,8 @@ import com.uds.pautando.features.sign_in.data.datasource.local.SignInLocalDataSo
 import com.uds.pautando.features.sign_in.data.datasource.local.SignInLocalDataSourceImpl;
 import com.uds.pautando.features.sign_in.data.datasource.remote.SignInRemoteDataSource;
 import com.uds.pautando.features.sign_in.data.datasource.remote.signInRemoteDataSourceImpl;
-import com.uds.pautando.features.sign_in.data.model.Login;
-import com.uds.pautando.features.sign_in.data.model.LoginResponse;
+import com.uds.pautando.features.sign_in.data.model.SignIn;
+import com.uds.pautando.features.sign_in.data.model.SignInResponse;
 import com.uds.pautando.features.sign_in.data.model.SignInUser;
 import com.uds.pautando.features.sign_in.domain.repository.SignInRepository;
 
@@ -19,11 +19,11 @@ public class SignInRepositoryImpl implements SignInRepository {
     SignInLocalDataSource signInLocalDataSource = new SignInLocalDataSourceImpl();
 
     @Override
-    public MutableLiveData<LoginResponse> login(Login login) {
-        return signInRemoteDataSource.login(login, new SuccessFailureCallback<SignInUser>() {
+    public MutableLiveData<SignInResponse> signIn(SignIn signIn) {
+        return signInRemoteDataSource.login(signIn, new SuccessFailureCallback<SignInUser>() {
             @Override
             public void onSuccess(SignInUser result) {
-                signInLocalDataSource.saveLoginData(result.getUid(),result.getEmail());
+                signInLocalDataSource.saveUserData(result.getUid(),result.getName(),result.getEmail());
             }
 
             @Override
@@ -31,5 +31,10 @@ public class SignInRepositoryImpl implements SignInRepository {
                 Log.i("LoginRepositoryImpl","message");
             }
         });
+    }
+
+    @Override
+    public SignInUser getCurrentUser() {
+        return signInLocalDataSource.getCurrentUser();
     }
 }

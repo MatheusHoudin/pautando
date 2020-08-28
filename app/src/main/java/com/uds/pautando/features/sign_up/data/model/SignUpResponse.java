@@ -97,4 +97,8 @@ public class SignUpResponse {
     public String getUnexpectedErrorMessage() {
         return unexpectedErrorMessage;
     }
+
+    public String getNameErrorMessage() {
+        return nameErrorMessage;
+    }
 }

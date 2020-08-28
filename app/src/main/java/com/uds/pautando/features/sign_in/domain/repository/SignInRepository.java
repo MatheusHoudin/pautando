@@ -2,9 +2,11 @@ package com.uds.pautando.features.sign_in.domain.repository;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.uds.pautando.features.sign_in.data.model.Login;
-import com.uds.pautando.features.sign_in.data.model.LoginResponse;
+import com.uds.pautando.features.sign_in.data.model.SignIn;
+import com.uds.pautando.features.sign_in.data.model.SignInResponse;
+import com.uds.pautando.features.sign_in.data.model.SignInUser;
 
 public interface SignInRepository {
-    MutableLiveData<LoginResponse> login(Login login);
+    MutableLiveData<SignInResponse> signIn(SignIn signIn);
+    SignInUser getCurrentUser();
 }

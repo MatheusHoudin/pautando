@@ -4,11 +4,11 @@ import com.uds.pautando.core.error.exception.EmailAndPasswordNotProvidedExceptio
 import com.uds.pautando.core.validators.Email;
 import com.uds.pautando.core.validators.Password;
 
-public class Login {
+public class SignIn {
     private Email email;
     private Password password;
 
-    public Login(String email, String password) throws Exception{
+    public SignIn(String email, String password) throws Exception{
         if((email == null || email.isEmpty()) && (password == null || password.isEmpty())) {
             throw new EmailAndPasswordNotProvidedException();
         }else{

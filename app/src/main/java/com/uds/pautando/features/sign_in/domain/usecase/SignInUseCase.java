@@ -8,51 +8,51 @@ import com.uds.pautando.core.error.exception.EmptyPasswordException;
 import com.uds.pautando.core.error.exception.InvalidEmailFormatException;
 import com.uds.pautando.core.error.exception.ShortPasswordException;
 import com.uds.pautando.core.usecase.BaseUseCase;
-import com.uds.pautando.features.sign_in.data.model.Login;
-import com.uds.pautando.features.sign_in.data.model.LoginResponse;
+import com.uds.pautando.features.sign_in.data.model.SignIn;
+import com.uds.pautando.features.sign_in.data.model.SignInResponse;
 import com.uds.pautando.features.sign_in.data.repository.SignInRepositoryImpl;
 import com.uds.pautando.features.sign_in.domain.repository.SignInRepository;
 
-public class SignInUseCase implements BaseUseCase<MutableLiveData<LoginResponse>, SignInParams> {
+public class SignInUseCase implements BaseUseCase<MutableLiveData<SignInResponse>, SignInParams> {
     private SignInRepository repository = new SignInRepositoryImpl();
     @Override
-    public MutableLiveData<LoginResponse> call(SignInParams params) {
-        MutableLiveData<LoginResponse> loginResult = new MutableLiveData<>();
+    public MutableLiveData<SignInResponse> call(SignInParams params) {
+        MutableLiveData<SignInResponse> loginResult = new MutableLiveData<>();
         try {
-            Login login = new Login(params.getEmail(),params.getPassword());
-            return repository.login(login);
+            SignIn signIn = new SignIn(params.getEmail(),params.getPassword());
+            return repository.signIn(signIn);
         } catch (EmailAndPasswordNotProvidedException e) {
-            loginResult.postValue(new LoginResponse(
+            loginResult.postValue(new SignInResponse(
               e.getMessage(),
               e.getMessage(),
               true,false,false,false,false,false
             ));
         } catch (EmptyEmailException e) {
-            loginResult.postValue(new LoginResponse(
+            loginResult.postValue(new SignInResponse(
               e.getMessage(),
              null,
              false,true,false,false,false,false
             ));
         } catch (EmptyPasswordException e) {
-            loginResult.postValue(new LoginResponse(
+            loginResult.postValue(new SignInResponse(
               null,
                e.getMessage(),
              false,false,false,false,false,true
             ));
         } catch (InvalidEmailFormatException e) {
-            loginResult.postValue(new LoginResponse(
+            loginResult.postValue(new SignInResponse(
               e.getMessage(),
              null,
              false,false,true,false,false,false
             ));
         } catch (ShortPasswordException e) {
-            loginResult.postValue(new LoginResponse(
+            loginResult.postValue(new SignInResponse(
               null,
               e.getMessage(),
              false,false,false,true,false,false
             ));
         } catch (Exception e) {
-            loginResult.postValue(new LoginResponse(
+            loginResult.postValue(new SignInResponse(
               null,
              null,
              false,false,false,false,true,false

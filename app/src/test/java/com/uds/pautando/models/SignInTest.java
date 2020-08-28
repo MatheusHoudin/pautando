@@ -3,13 +3,13 @@ package com.uds.pautando.models;
 import com.uds.pautando.core.error.exception.EmailAndPasswordNotProvidedException;
 import com.uds.pautando.core.error.exception.EmptyEmailException;
 import com.uds.pautando.core.error.exception.EmptyPasswordException;
-import com.uds.pautando.features.sign_in.data.model.Login;
+import com.uds.pautando.features.sign_in.data.model.SignIn;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-public class LoginTest {
+public class SignInTest {
 
     @Rule
     public ExpectedException exception = ExpectedException.none();
@@ -17,18 +17,18 @@ public class LoginTest {
     @Test
     public void assertEmailAndPasswordIsEmpty() throws Exception {
         exception.expect(EmailAndPasswordNotProvidedException.class);
-        new Login(null,null);
+        new SignIn(null,null);
     }
 
     @Test
     public void assertPasswordIsEmpty() throws Exception {
         exception.expect(EmptyPasswordException.class);
-        new Login("matheusdin04@gmail.com",null);
+        new SignIn("matheusdin04@gmail.com",null);
     }
 
     @Test
     public void assertEmailIsEmpty() throws Exception {
         exception.expect(EmptyEmailException.class);
-        new Login(null,"123456");
+        new SignIn(null,"123456");
     }
 }

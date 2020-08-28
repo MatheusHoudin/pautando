@@ -1,5 +1,7 @@
 package com.uds.pautando.features.sign_up.domain.usecase;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 
 import com.uds.pautando.core.error.exception.EmailAndNameNotProvidedException;
@@ -25,14 +27,17 @@ public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse
         MutableLiveData<SignUpResponse> mutableLiveData = new MutableLiveData<>();
         try {
             SignUpUser signUpUser = new SignUpUser(signUpParams.getName(),signUpParams.getEmail(),signUpParams.getPassword());
+            return repository.signUp(signUpUser);
         } catch (EmailAndPasswordAndNameNotProvidedException e) {
+            Log.i("RESULT","EmailAndPasswordAndNameNotProvidedException");
             mutableLiveData.postValue(new SignUpResponse(
-              false, true, true,
+              false, true, false,
               false, false, false, false,
               false, false, false ,false,
               false, e.getMessage(), e.getMessage(), e.getMessage(), null
             ));
         } catch (EmailAndNameNotProvidedException e) {
+            Log.i("RESULT","EmailAndNameNotProvidedException");
             mutableLiveData.postValue(new SignUpResponse(
                false, false, false,
                true, false, false, false,
@@ -40,6 +45,8 @@ public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse
                false, e.getMessage(), null, e.getMessage(), null
             ));
         } catch (EmailAndPasswordNotProvidedException e) {
+            Log.i("RESULT","EmailAndPasswordNotProvidedException");
+
             mutableLiveData.postValue(new SignUpResponse(
               false, false, true,
               false, false, false, false,
@@ -47,6 +54,8 @@ public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse
               false, e.getMessage(), e.getMessage(), null, null
             ));
         } catch (NameAndPasswordNotProvidedException e) {
+            Log.i("RESULT","NameAndPasswordNotProvidedException");
+
             mutableLiveData.postValue(new SignUpResponse(
               false, false, false,
               false, true, false, false,
@@ -54,6 +63,8 @@ public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse
               false, null, e.getMessage(), e.getMessage(), null
             ));
         } catch (EmptyEmailException e) {
+            Log.i("RESULT","EmptyEmailException");
+
             mutableLiveData.postValue(new SignUpResponse(
               false, false, false,
               false, false, true, false,
@@ -61,6 +72,8 @@ public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse
               false, e.getMessage(), null, null, null
             ));
         } catch (EmptyNameException e) {
+            Log.i("RESULT","EmptyNameException");
+
             mutableLiveData.postValue(new SignUpResponse(
               false, false, false,
               false, false, false, false,
@@ -68,6 +81,8 @@ public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse
               false, null, null, e.getMessage(), null
             ));
         } catch (EmptyPasswordException e) {
+            Log.i("RESULT","EmptyPasswordException");
+
             mutableLiveData.postValue(new SignUpResponse(
               false, false, false,
               false, false, false, true,
@@ -75,6 +90,8 @@ public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse
               false, null, e.getMessage(), null, null
             ));
         } catch (InvalidEmailFormatException e) {
+            Log.i("RESULT","InvalidEmailFormatException");
+
             mutableLiveData.postValue(new SignUpResponse(
               false, false, false,
               false, false, false, false,
@@ -82,6 +99,8 @@ public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse
               false, e.getMessage(), null, null, null
             ));
         } catch (ShortPasswordException e) {
+            Log.i("RESULT","ShortPasswordException");
+
             mutableLiveData.postValue(new SignUpResponse(
               false, false, false,
               false, false, false, false,
@@ -89,11 +108,13 @@ public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse
               false, null, e.getMessage(), null, null
             ));
         } catch (Exception e) {
+            Log.i("RESULT","Exception");
+
             mutableLiveData.postValue(new SignUpResponse(
               false, false, false,
               false, false, false, false,
               false, false, false ,true,
-              false, null, e.getMessage(), null, null
+              false, null, null, null, e.getMessage()
             ));
         }
 
