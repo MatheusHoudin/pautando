@@ -1,4 +1,4 @@
-package com.uds.pautando.features.core_models;
+package com.uds.pautando.core.models;
 
 import java.util.List;
 

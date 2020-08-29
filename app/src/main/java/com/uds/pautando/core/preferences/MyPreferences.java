@@ -40,6 +40,10 @@ public class MyPreferences {
         editor.apply();
     }
 
+    public void deleteUserData(){
+        sharedPreferences.edit().clear().apply();
+    }
+
     public SignInUser getUser() {
         String uid = sharedPreferences.getString(UID,null);
         String email = sharedPreferences.getString(EMAIL, null);

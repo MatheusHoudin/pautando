@@ -2,9 +2,13 @@
     <string name="app_name">Pautando</string>
     <string name="email">Digite seu email</string>
     <string name="name">Digite seu nome</string>
+    <string name="title">Digite o título</string>
+    <string name="description">Digite a descrição</string>
+    <string name="details">Digite os detalhes</string>
     <string name="password">Digite sua senha</string>
     <string name="signin">Entrar</string>
     <string name="signup">Cadastrar</string>
+    <string name="create">Criar Pauta</string>
     <string name="recover_password">Recuperar senha</string>
     <string name="recover_password_instructions">Enviaremos um email de alteração de senha para seu email, logo você acessará sua conta novamente</string>
     <string name="create_my_account">Criar minha conta</string>
@@ -12,6 +16,7 @@
     <string name="forgot_password">Poxa, esqueci minha senha, quero ajuda.</string>
     <string name="already_have_an_account">Já tenho uma conta, quero acessar</string>
     <string name="signup_page">Criar conta</string>
+    <string name="create_meeting_agenda">Criar Pauta</string>
     <string name="recover_password_page">Recuperar senha</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -3,7 +3,6 @@ package com.uds.pautando.features.sign_up.data.model;
 import com.uds.pautando.core.error.exception.EmailAndNameNotProvidedException;
 import com.uds.pautando.core.error.exception.EmailAndPasswordAndNameNotProvidedException;
 import com.uds.pautando.core.error.exception.EmailAndPasswordNotProvidedException;
-import com.uds.pautando.core.error.exception.EmptyNameException;
 import com.uds.pautando.core.error.exception.NameAndPasswordNotProvidedException;
 import com.uds.pautando.core.validators.Email;
 import com.uds.pautando.core.validators.Name;

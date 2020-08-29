@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer;
 import com.uds.pautando.R;
 import com.uds.pautando.core.preferences.MyPreferences;
 import com.uds.pautando.features.forgot_password.presentation.pages.ForgotPasswordPage;
-import com.uds.pautando.features.home.presentation.pages.HomeActivity;
+import com.uds.pautando.features.home.presentation.pages.HomePage;
 import com.uds.pautando.features.sign_in.data.model.SignInResponse;
 import com.uds.pautando.features.sign_in.data.model.SignInUser;
 import com.uds.pautando.features.sign_in.presentation.viewmodel.CurrentUserViewModel;
@@ -49,7 +49,7 @@ public class SignInPage extends AppCompatActivity {
             @Override
             public void onChanged(SignInUser signInUser) {
                 if(signInUser != null) {
-                    Intent intent = new Intent(getBaseContext(), HomeActivity.class);
+                    Intent intent = new Intent(getBaseContext(), HomePage.class);
                     startActivity(intent);
                     finish();
                 }
@@ -88,7 +88,7 @@ public class SignInPage extends AppCompatActivity {
                                   signInResponse.getUserLoggedInSuccessfully() != null
                                   && signInResponse.getUserLoggedInSuccessfully()
                                 ) {
-                                    Intent intent = new Intent(getBaseContext(), HomeActivity.class);
+                                    Intent intent = new Intent(getBaseContext(), HomePage.class);
                                     startActivity(intent);
                                     finish();
                                 }else{

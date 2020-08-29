@@ -1,6 +1,6 @@
-package com.uds.pautando.features.core_models;
+package com.uds.pautando.core.models;
 
-public class MeetingAgenda {
+public class MeetingAgenda{
     private String title;
     private String description;
     private String details;

@@ -12,9 +12,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
-import com.uds.pautando.core.callback.SuccessFailureCallback;
-import com.uds.pautando.features.core_models.MeetingAgenda;
-import com.uds.pautando.features.core_models.User;
+import com.uds.pautando.core.models.MeetingAgenda;
+import com.uds.pautando.core.models.User;
 import com.uds.pautando.features.sign_up.data.model.SignUpResponse;
 import com.uds.pautando.features.sign_up.data.model.SignUpUser;
 

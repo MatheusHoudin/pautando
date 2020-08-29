@@ -5,12 +5,9 @@ import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.lifecycle.Observer;
 
 import com.uds.pautando.R;
-import com.uds.pautando.features.home.presentation.pages.HomeActivity;
-import com.uds.pautando.features.sign_in.presentation.pages.SignInPage;
 import com.uds.pautando.features.sign_up.data.model.SignUpResponse;
 import com.uds.pautando.features.sign_up.presentation.viewmodel.SignUpViewModel;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
