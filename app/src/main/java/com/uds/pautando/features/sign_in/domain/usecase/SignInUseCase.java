@@ -8,13 +8,19 @@ import com.uds.pautando.core.error.exception.EmptyPasswordException;
 import com.uds.pautando.core.error.exception.InvalidEmailFormatException;
 import com.uds.pautando.core.error.exception.ShortPasswordException;
 import com.uds.pautando.core.usecase.BaseUseCase;
+import com.uds.pautando.factory.RepositoryFactory;
 import com.uds.pautando.features.sign_in.data.model.SignIn;
 import com.uds.pautando.features.sign_in.data.model.SignInResponse;
 import com.uds.pautando.features.sign_in.data.repository.SignInRepositoryImpl;
 import com.uds.pautando.features.sign_in.domain.repository.SignInRepository;
 
 public class SignInUseCase implements BaseUseCase<MutableLiveData<SignInResponse>, SignInParams> {
-    private SignInRepository repository = new SignInRepositoryImpl();
+    private SignInRepository repository;
+
+    public SignInUseCase() {
+        repository = RepositoryFactory.getSignInRepository();
+    }
+
     @Override
     public MutableLiveData<SignInResponse> call(SignInParams params) {
         MutableLiveData<SignInResponse> loginResult = new MutableLiveData<>();

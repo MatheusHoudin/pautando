@@ -87,7 +87,7 @@ public class MeetingAgendaFragment extends Fragment {
                 if(meetingAgendaListResponse.getThereAreNoMeetingAgenda()) {
                     thereAreNoMeetingAgendas.setVisibility(View.VISIBLE);
                     recyclerView.setVisibility(View.GONE);
-                    thereAreNoMeetingAgendasText.setText("Você não possui pautas "+(isOpenedMeetingAgendaFragment ? "em aberto" : "fechadas")+" cadastradas no momento, vamos criar uma");
+                    thereAreNoMeetingAgendasText.setText("Você não possui pautas "+(isOpenedMeetingAgendaFragment ? "em aberto" : "fechadas")+" cadastradas no momento, vamos criar uma?");
                 }else if(meetingAgendaListResponse.getUnexpectedError()) {
                     Toast.makeText(getContext(),meetingAgendaListResponse.getErrorMessage(),Toast.LENGTH_LONG).show();
                 }else{

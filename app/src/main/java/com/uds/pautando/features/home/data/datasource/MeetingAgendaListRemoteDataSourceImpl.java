@@ -42,15 +42,17 @@ public class MeetingAgendaListRemoteDataSourceImpl implements MeetingAgendaListR
                     List<Map<String,Object>> meetingAgendaList = (List<Map<String, Object>>) queryDocumentSnapshots.getDocuments().get(0).get("meetingAgendas");
                     List<MeetingAgenda> filteredList = new ArrayList<>();
 
-                    for(Map<String,Object> m : meetingAgendaList) {
-                        if(m.get("status") == isOpenedMeetingAgendaList) {
-                            filteredList.add(new MeetingAgenda(
-                              m.get("title").toString(),
-                              m.get("description").toString(),
-                              m.get("details").toString(),
-                              m.get("author").toString(),
-                              (Boolean) m.get("status")
-                            ));
+                    if(meetingAgendaList != null) {
+                        for(Map<String,Object> m : meetingAgendaList) {
+                            if(m.get("status") == isOpenedMeetingAgendaList) {
+                                filteredList.add(new MeetingAgenda(
+                                        m.get("title").toString(),
+                                        m.get("description").toString(),
+                                        m.get("details").toString(),
+                                        m.get("author").toString(),
+                                        (Boolean) m.get("status")
+                                ));
+                            }
                         }
                     }
 

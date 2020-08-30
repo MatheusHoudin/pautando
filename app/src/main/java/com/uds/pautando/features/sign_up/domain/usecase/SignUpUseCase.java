@@ -14,13 +14,18 @@ import com.uds.pautando.core.error.exception.InvalidEmailFormatException;
 import com.uds.pautando.core.error.exception.NameAndPasswordNotProvidedException;
 import com.uds.pautando.core.error.exception.ShortPasswordException;
 import com.uds.pautando.core.usecase.BaseUseCase;
+import com.uds.pautando.factory.RepositoryFactory;
 import com.uds.pautando.features.sign_up.data.model.SignUpResponse;
 import com.uds.pautando.features.sign_up.data.model.SignUpUser;
 import com.uds.pautando.features.sign_up.data.repository.SignUpRepositoryImpl;
 import com.uds.pautando.features.sign_up.domain.repository.SignUpRepository;
 
 public class SignUpUseCase implements BaseUseCase<MutableLiveData<SignUpResponse>, SignUpParams> {
-    private SignUpRepository repository = new SignUpRepositoryImpl();
+    private SignUpRepository repository;
+
+    public SignUpUseCase() {
+        repository = RepositoryFactory.getSignUpRepository();
+    }
 
     @Override
     public MutableLiveData<SignUpResponse> call(SignUpParams signUpParams) {

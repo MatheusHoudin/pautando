@@ -18,16 +18,24 @@ import com.uds.pautando.core.error.exception.TitleAndDescriptionAndDetailsNotPro
 import com.uds.pautando.core.error.exception.TitleAndDescriptionNotProvidedException;
 import com.uds.pautando.core.error.exception.TitleAndDetailsNotProvidedException;
 import com.uds.pautando.core.usecase.BaseUseCase;
+import com.uds.pautando.factory.RepositoryFactory;
 import com.uds.pautando.features.create_meeting_agenda.data.models.CreateMeetingAgendaResponse;
 import com.uds.pautando.features.create_meeting_agenda.data.models.MeetingAgenda;
 import com.uds.pautando.features.create_meeting_agenda.data.repository.CreateMeetingAgendaRepositoryImpl;
 import com.uds.pautando.features.create_meeting_agenda.domain.repository.CreateMeetingAgendaRepository;
 import com.uds.pautando.features.sign_in.data.datasource.local.SignInLocalDataSource;
 import com.uds.pautando.features.sign_in.data.datasource.local.SignInLocalDataSourceImpl;
+import com.uds.pautando.features.sign_in.domain.repository.SignInRepository;
 
 public class CreateMeetingAgendaUseCase implements BaseUseCase<MutableLiveData<CreateMeetingAgendaResponse>, CreateMeetingAgendaParams> {
     private CreateMeetingAgendaRepository repository = new CreateMeetingAgendaRepositoryImpl();
-    private SignInLocalDataSource signInLocalDataSource = new SignInLocalDataSourceImpl();
+    private SignInRepository signInRepository;
+
+    public CreateMeetingAgendaUseCase() {
+        repository = RepositoryFactory.getCreateMeetingAgendaRepository();
+        signInRepository = RepositoryFactory.getSignInRepository();
+    }
+
     @Override
     public MutableLiveData<CreateMeetingAgendaResponse> call(CreateMeetingAgendaParams createMeetingAgendaParams) {
         MutableLiveData<CreateMeetingAgendaResponse> mutableLiveData = new MutableLiveData<>();
@@ -36,7 +44,7 @@ public class CreateMeetingAgendaUseCase implements BaseUseCase<MutableLiveData<C
               createMeetingAgendaParams.getTitle(),
               createMeetingAgendaParams.getDescription(),
               createMeetingAgendaParams.getDetails(),
-              signInLocalDataSource.getCurrentUser().getName()
+              signInRepository.getCurrentUser().getName()
             );
 
             return repository.createMeeting(meetingAgenda);

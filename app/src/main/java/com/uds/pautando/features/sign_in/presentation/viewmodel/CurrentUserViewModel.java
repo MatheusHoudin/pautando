@@ -3,6 +3,7 @@ package com.uds.pautando.features.sign_in.presentation.viewmodel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.uds.pautando.factory.UseCaseFactory;
 import com.uds.pautando.features.sign_in.data.model.SignInUser;
 import com.uds.pautando.features.sign_in.domain.usecase.GetCurrentUserUseCase;
 
@@ -11,7 +12,7 @@ public class CurrentUserViewModel extends ViewModel {
     private MutableLiveData<SignInUser> userMutableLiveData;
 
     public CurrentUserViewModel(){
-        userUseCase = new GetCurrentUserUseCase();
+        userUseCase = UseCaseFactory.getGetCurrentUserUseCase();
         userMutableLiveData = new MutableLiveData<>();
     }
 

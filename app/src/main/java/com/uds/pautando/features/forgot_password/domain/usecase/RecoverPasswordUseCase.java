@@ -5,13 +5,18 @@ import androidx.lifecycle.MutableLiveData;
 import com.uds.pautando.core.error.exception.EmptyEmailException;
 import com.uds.pautando.core.error.exception.InvalidEmailFormatException;
 import com.uds.pautando.core.usecase.BaseUseCase;
+import com.uds.pautando.factory.RepositoryFactory;
 import com.uds.pautando.features.forgot_password.data.model.RecoverPasswordResponse;
 import com.uds.pautando.features.forgot_password.data.model.UserEmail;
 import com.uds.pautando.features.forgot_password.data.repository.RecoverPasswordRepositoryImpl;
 import com.uds.pautando.features.forgot_password.domain.repository.RecoverPasswordRepository;
 
 public class RecoverPasswordUseCase implements BaseUseCase<MutableLiveData<RecoverPasswordResponse>, RecoverPasswordParams> {
-    private RecoverPasswordRepository repository = new RecoverPasswordRepositoryImpl();
+    private RecoverPasswordRepository repository;
+
+    public RecoverPasswordUseCase() {
+        repository = RepositoryFactory.getRecoverPasswordRepository();
+    }
 
     @Override
     public MutableLiveData<RecoverPasswordResponse> call(RecoverPasswordParams recoverPasswordParams) {
