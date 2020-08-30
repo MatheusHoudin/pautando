@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.uds.pautando.core.callback.SuccessFailureCallback;
+import com.uds.pautando.factory.FirebaseFactory;
 import com.uds.pautando.features.sign_in.data.model.SignIn;
 import com.uds.pautando.features.sign_in.data.model.SignInResponse;
 import com.uds.pautando.features.sign_in.data.model.SignInUser;
@@ -25,14 +26,12 @@ import com.uds.pautando.features.sign_in.data.model.SignInUser;
 import javax.annotation.Nullable;
 
 public class SignInRemoteDataSourceImpl implements SignInRemoteDataSource {
-    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firestore;
 
     public SignInRemoteDataSourceImpl(){
-        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-                .setTimestampsInSnapshotsEnabled(true)
-                .build();
-        firestore.setFirestoreSettings(settings);
+        firebaseAuth = FirebaseFactory.getFirebaseAuth();
+        firestore = FirebaseFactory.getFirebaseFirestore();
     }
     @Override
     public MutableLiveData<SignInResponse> login(SignIn signIn, final SuccessFailureCallback<SignInUser> callback) {

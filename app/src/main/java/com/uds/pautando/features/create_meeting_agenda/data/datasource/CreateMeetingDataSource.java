@@ -6,5 +6,5 @@ import com.uds.pautando.features.create_meeting_agenda.data.models.CreateMeeting
 import com.uds.pautando.features.create_meeting_agenda.data.models.MeetingAgenda;
 
 public interface CreateMeetingDataSource {
-    MutableLiveData<CreateMeetingAgendaResponse> createMeetingAgenda(MeetingAgenda meetingAgenda);
+    MutableLiveData<CreateMeetingAgendaResponse> createMeetingAgenda(MeetingAgenda meetingAgenda, String userUid);
 }

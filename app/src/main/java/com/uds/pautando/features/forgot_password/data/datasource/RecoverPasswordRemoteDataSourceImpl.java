@@ -8,12 +8,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.uds.pautando.factory.FirebaseFactory;
 import com.uds.pautando.features.forgot_password.data.model.RecoverPasswordResponse;
 import com.uds.pautando.features.forgot_password.data.model.UserEmail;
 
 public class RecoverPasswordRemoteDataSourceImpl implements RecoverPasswordRemoteDataSource {
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    FirebaseAuth firebaseAuth;
 
+    public RecoverPasswordRemoteDataSourceImpl() {
+        firebaseAuth = FirebaseFactory.getFirebaseAuth();
+    }
     @Override
     public MutableLiveData<RecoverPasswordResponse> recoverPassword(UserEmail userEmail) {
         final MutableLiveData<RecoverPasswordResponse> mutableLiveData = new MutableLiveData<>();

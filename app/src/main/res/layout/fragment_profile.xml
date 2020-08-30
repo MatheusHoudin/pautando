@@ -3,40 +3,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginHorizontal="20dp"
     android:orientation="vertical"
+    android:background="@color/colorPrimaryLight"
     tools:context=".features.home.presentation.fragment.ProfileFragment">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:cardBackgroundColor="@color/lightRed"
+    <TextView
+        android:id="@+id/user_name_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olá, Matheus Gomes"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        app:cardCornerRadius="10dp">
-        <LinearLayout
+        android:layout_gravity="center">
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/meeting_agenda_icon"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Closed Meeting Agendas"
-                android:textColor="@android:color/white"
-                android:layout_gravity="center"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="5dp"
-                />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            android:src="@drawable/ic_baseline_email_24"
+            android:layout_marginRight="10dp"/>
+        <TextView
+            android:id="@+id/user_email_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detalhes"
+            android:textColor="@android:color/white"
+            android:textSize="18dp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:justificationMode="inter_word"
+        android:text="É um prazer enorme para nós da Pautando ter você aqui conosco, espero que você esteja tendo uma experiência maravilhosa."
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_vertical|end"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        />
 </LinearLayout>

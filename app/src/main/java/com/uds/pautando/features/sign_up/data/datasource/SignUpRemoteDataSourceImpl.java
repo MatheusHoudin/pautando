@@ -14,20 +14,19 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.uds.pautando.core.models.MeetingAgenda;
 import com.uds.pautando.core.models.User;
+import com.uds.pautando.factory.FirebaseFactory;
 import com.uds.pautando.features.sign_up.data.model.SignUpResponse;
 import com.uds.pautando.features.sign_up.data.model.SignUpUser;
 
 import java.util.ArrayList;
 
 public class SignUpRemoteDataSourceImpl implements SignUpRemoteDataSource{
-    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firestore;
 
     public SignUpRemoteDataSourceImpl(){
-        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-          .setTimestampsInSnapshotsEnabled(true)
-          .build();
-        firestore.setFirestoreSettings(settings);
+        firebaseAuth = FirebaseFactory.getFirebaseAuth();
+        firestore = FirebaseFactory.getFirebaseFirestore();
     }
 
     @Override

@@ -7,11 +7,14 @@ import com.uds.pautando.features.create_meeting_agenda.data.datasource.CreateMee
 import com.uds.pautando.features.create_meeting_agenda.data.models.CreateMeetingAgendaResponse;
 import com.uds.pautando.features.create_meeting_agenda.data.models.MeetingAgenda;
 import com.uds.pautando.features.create_meeting_agenda.domain.repository.CreateMeetingAgendaRepository;
+import com.uds.pautando.features.sign_in.data.datasource.local.SignInLocalDataSource;
+import com.uds.pautando.features.sign_in.data.datasource.local.SignInLocalDataSourceImpl;
 
 public class CreateMeetingAgendaRepositoryImpl implements CreateMeetingAgendaRepository {
     private CreateMeetingDataSource dataSource = new CreateMeetingDataSourceImpl();
+    private SignInLocalDataSource signInLocalDataSource = new SignInLocalDataSourceImpl();
     @Override
     public MutableLiveData<CreateMeetingAgendaResponse> createMeeting(MeetingAgenda meetingAgenda) {
-        return dataSource.createMeetingAgenda(meetingAgenda);
+        return dataSource.createMeetingAgenda(meetingAgenda,signInLocalDataSource.getCurrentUser().getUid());
     }
 }

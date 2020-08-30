@@ -5,6 +5,10 @@ import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.lifecycle.Observer;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.method.BaseKeyListener;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +37,8 @@ public class CreateMeetingAgendaPage extends AppCompatActivity {
         final CreateMeetingAgendaViewModel viewModel = new CreateMeetingAgendaViewModel();
         author.setText(viewModel.getCurrentUser().getName());
 
+        createMeetingAgenda.setEnabled(false);
+        createMeetingAgenda.getBackground().setAlpha(50);
         createMeetingAgenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +71,33 @@ public class CreateMeetingAgendaPage extends AppCompatActivity {
                 });
             }
         });
+
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(title.getText().toString().isEmpty() || description.getText().toString().isEmpty()
+                        || details.getText().toString().isEmpty()) {
+                    createMeetingAgenda.setEnabled(false);
+                    createMeetingAgenda.getBackground().setAlpha(50);
+                }else{
+                    createMeetingAgenda.setEnabled(true);
+                    createMeetingAgenda.getBackground().setAlpha(255);
+                }
+            }
+        };
+        title.addTextChangedListener(textWatcher);
+        description.addTextChangedListener(textWatcher);
+        details.addTextChangedListener(textWatcher);
 
         backToHome.setOnClickListener(new View.OnClickListener() {
             @Override

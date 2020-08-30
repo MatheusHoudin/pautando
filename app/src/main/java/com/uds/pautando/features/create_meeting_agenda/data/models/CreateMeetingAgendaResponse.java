@@ -13,6 +13,7 @@ public class CreateMeetingAgendaResponse {
     private Boolean isTitleAndDescriptionEmpty;
     private Boolean isTitleAndDetailsEmpty;
     private Boolean isTitleEmpty;
+    private Boolean thereIsAlreadyAMeetingAgendaWithSameName;
     private Boolean isDescriptionEmpty;
     private Boolean isDetailsEmpty;
     private Boolean isAuthorEmpty;
@@ -36,6 +37,31 @@ public class CreateMeetingAgendaResponse {
         this.isTitleAndDescriptionEmpty = isTitleAndDescriptionEmpty;
         this.isTitleAndDetailsEmpty = isTitleAndDetailsEmpty;
         this.isTitleEmpty = isTitleEmpty;
+        this.isDescriptionEmpty = isDescriptionEmpty;
+        this.isDetailsEmpty = isDetailsEmpty;
+        this.isAuthorEmpty = isAuthorEmpty;
+        this.isUnexpectedError = isUnexpectedError;
+        this.titleErrorMessage = titleErrorMessage;
+        this.descriptionErrorMessage = descriptionErrorMessage;
+        this.detailsErrorMessage = detailsErrorMessage;
+        this.authorErrorMessage = authorErrorMessage;
+        this.unexpectedErrorMessage = unexpectedErrorMessage;
+    }
+
+    public CreateMeetingAgendaResponse(Boolean createdMeetingAgendaSuccessfully, Boolean isDescriptionAndAuthorEmpty, Boolean isDescriptionAndDetailsAndAuthorEmpty, Boolean isDescriptionAndDetailsEmpty, Boolean isDetailsAndAuthorEmpty, Boolean isTitleAndAuthorEmpty, Boolean isTitleAndDescriptionAndAuthorEmpty, Boolean isTitleAndDescriptionAndDetailsAndAuthorEmpty, Boolean isTitleAndDescriptionAndDetailsEmpty, Boolean isTitleAndDescriptionEmpty, Boolean isTitleAndDetailsEmpty, Boolean isTitleEmpty, Boolean thereIsAlreadyAMeetingAgendaWithSameName, Boolean isDescriptionEmpty, Boolean isDetailsEmpty, Boolean isAuthorEmpty, Boolean isUnexpectedError, String titleErrorMessage, String descriptionErrorMessage, String detailsErrorMessage, String authorErrorMessage, String unexpectedErrorMessage) {
+        this.createdMeetingAgendaSuccessfully = createdMeetingAgendaSuccessfully;
+        this.isDescriptionAndAuthorEmpty = isDescriptionAndAuthorEmpty;
+        this.isDescriptionAndDetailsAndAuthorEmpty = isDescriptionAndDetailsAndAuthorEmpty;
+        this.isDescriptionAndDetailsEmpty = isDescriptionAndDetailsEmpty;
+        this.isDetailsAndAuthorEmpty = isDetailsAndAuthorEmpty;
+        this.isTitleAndAuthorEmpty = isTitleAndAuthorEmpty;
+        this.isTitleAndDescriptionAndAuthorEmpty = isTitleAndDescriptionAndAuthorEmpty;
+        this.isTitleAndDescriptionAndDetailsAndAuthorEmpty = isTitleAndDescriptionAndDetailsAndAuthorEmpty;
+        this.isTitleAndDescriptionAndDetailsEmpty = isTitleAndDescriptionAndDetailsEmpty;
+        this.isTitleAndDescriptionEmpty = isTitleAndDescriptionEmpty;
+        this.isTitleAndDetailsEmpty = isTitleAndDetailsEmpty;
+        this.isTitleEmpty = isTitleEmpty;
+        this.thereIsAlreadyAMeetingAgendaWithSameName = thereIsAlreadyAMeetingAgendaWithSameName;
         this.isDescriptionEmpty = isDescriptionEmpty;
         this.isDetailsEmpty = isDetailsEmpty;
         this.isAuthorEmpty = isAuthorEmpty;

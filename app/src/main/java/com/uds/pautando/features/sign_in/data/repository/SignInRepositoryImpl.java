@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 
 import com.uds.pautando.core.callback.SuccessFailureCallback;
+import com.uds.pautando.factory.DataSourceFactory;
 import com.uds.pautando.features.sign_in.data.datasource.local.SignInLocalDataSource;
 import com.uds.pautando.features.sign_in.data.datasource.local.SignInLocalDataSourceImpl;
 import com.uds.pautando.features.sign_in.data.datasource.remote.SignInRemoteDataSource;
@@ -15,8 +16,13 @@ import com.uds.pautando.features.sign_in.data.model.SignInUser;
 import com.uds.pautando.features.sign_in.domain.repository.SignInRepository;
 
 public class SignInRepositoryImpl implements SignInRepository {
-    SignInRemoteDataSource signInRemoteDataSource = new SignInRemoteDataSourceImpl();
-    SignInLocalDataSource signInLocalDataSource = new SignInLocalDataSourceImpl();
+    SignInRemoteDataSource signInRemoteDataSource;
+    SignInLocalDataSource signInLocalDataSource;
+
+    public SignInRepositoryImpl() {
+        signInLocalDataSource = DataSourceFactory.getSignInLocalDataSource();
+        signInRemoteDataSource = DataSourceFactory.getSignInRemoteDataSource();
+    }
 
     @Override
     public MutableLiveData<SignInResponse> signIn(SignIn signIn) {

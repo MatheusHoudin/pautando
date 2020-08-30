@@ -1,5 +1,6 @@
 package com.uds.pautando.features.home.presentation.pages;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
@@ -11,9 +12,16 @@ import com.uds.pautando.features.sign_in.presentation.pages.SignInPage;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 
 public class HomePage extends AppCompatActivity {
+    private MeetingAgendaFragment openedMeetingAgendaFragment;
+    private MeetingAgendaFragment closedMeetingAgendaFragment;
+    private ProfileFragment profileFragment;
+    private CardView openedMeetingAgendaCircle;
+    private CardView closedMeetingAgendaCircle;
+    private CardView profileCircle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +32,17 @@ public class HomePage extends AppCompatActivity {
         final CardView closedMeetingAgendaAction = findViewById(R.id.closed_meeting_agenda_action);
         final CardView profileAction = findViewById(R.id.profile_action);
 
-        final CardView openedMeetingAgendaCircle = findViewById(R.id.opened_meeting_agenda_circle);
-        final CardView closedMeetingAgendaCircle = findViewById(R.id.closed_meeting_agenda_circle);
-        final CardView profileCircle = findViewById(R.id.profile_circle);
+        openedMeetingAgendaCircle = findViewById(R.id.opened_meeting_agenda_circle);
+        closedMeetingAgendaCircle = findViewById(R.id.closed_meeting_agenda_circle);
+        profileCircle = findViewById(R.id.profile_circle);
         final CardView logOut = findViewById(R.id.log_out);
 
+        openedMeetingAgendaFragment = MeetingAgendaFragment.newInstance(true);
+        closedMeetingAgendaFragment = MeetingAgendaFragment.newInstance(false);
+        profileFragment = new ProfileFragment();
+
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.main_page_container, new MeetingAgendaFragment());
+        ft.replace(R.id.main_page_container, openedMeetingAgendaFragment);
         ft.commit();
 
         openedMeetingAgendaAction.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +52,7 @@ public class HomePage extends AppCompatActivity {
           closedMeetingAgendaCircle.setVisibility(View.GONE);
           profileCircle.setVisibility(View.GONE);
           FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-          ft.replace(R.id.main_page_container, new MeetingAgendaFragment());
+          ft.replace(R.id.main_page_container, openedMeetingAgendaFragment);
           ft.commit();
             }
         });
@@ -52,7 +64,7 @@ public class HomePage extends AppCompatActivity {
           closedMeetingAgendaCircle.setVisibility(View.VISIBLE);
           profileCircle.setVisibility(View.GONE);
           FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-          ft.replace(R.id.main_page_container, new MeetingAgendaFragment());
+          ft.replace(R.id.main_page_container, closedMeetingAgendaFragment);
           ft.commit();
             }
         });
@@ -64,7 +76,7 @@ public class HomePage extends AppCompatActivity {
           closedMeetingAgendaCircle.setVisibility(View.GONE);
           profileCircle.setVisibility(View.VISIBLE);
           FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-          ft.replace(R.id.main_page_container, new ProfileFragment());
+          ft.replace(R.id.main_page_container, profileFragment);
           ft.commit();
             }
         });
@@ -79,5 +91,16 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        openedMeetingAgendaCircle.setVisibility(View.VISIBLE);
+        closedMeetingAgendaCircle.setVisibility(View.GONE);
+        profileCircle.setVisibility(View.GONE);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.main_page_container, openedMeetingAgendaFragment);
+        ft.commit();
     }
 }

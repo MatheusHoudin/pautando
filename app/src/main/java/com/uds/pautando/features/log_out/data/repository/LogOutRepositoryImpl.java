@@ -1,4 +1,4 @@
-package com.uds.pautando.features.log_out.data.datasource.repository;
+package com.uds.pautando.features.log_out.data.repository;
 
 import com.uds.pautando.features.log_out.data.datasource.local.LogOutLocalDataSource;
 import com.uds.pautando.features.log_out.data.datasource.local.LogOutLocalDataSourceImpl;
@@ -9,6 +9,10 @@ import com.uds.pautando.features.log_out.domain.repository.LogOutRepository;
 public class LogOutRepositoryImpl implements LogOutRepository {
     private LogOutRemoteDataSource remoteDataSource = new LogOutRemoteDataSourceImpl();
     private LogOutLocalDataSource localDataSource = new LogOutLocalDataSourceImpl();
+
+    public LogOutRepositoryImpl() {
+        
+    }
 
     @Override
     public void logOut() {
