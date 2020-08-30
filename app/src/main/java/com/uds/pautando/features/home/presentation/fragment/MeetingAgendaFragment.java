@@ -103,6 +103,14 @@ public class MeetingAgendaFragment extends Fragment {
                 }
             }
         });
+
+        thereAreNoMeetingAgendasButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), CreateMeetingAgendaPage.class);
+                startActivity(intent);
+            }
+        });
         createMeetingAgenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
